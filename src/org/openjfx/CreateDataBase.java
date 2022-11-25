@@ -38,21 +38,12 @@ public class CreateDataBase {
 
         try {
             connection = dbConnect.open();
-//            for (String s : sql) {
-//                prepStatement = connection.prepareStatement(s);
-//                prepStatement.executeUpdate();
-//            }
-
             prepStatement = connection.prepareStatement(sql);
             prepStatement.executeUpdate();
-//            Statement statement = connection.createStatement();
-//            statement.executeQuery(sql);
-
             connection.close();
         } catch (SQLException ex) {
             Logger.getLogger(CreateDataBase.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
 
 }
