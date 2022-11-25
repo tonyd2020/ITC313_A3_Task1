@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.collections.*?>
+<!--<?import Task1.*?>-->
+
+<VBox fillWidth="false" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.Task1Controller">
+    <children>
+        <BorderPane>
+            <center>
+                <VBox>
+                    <children>
+                        <TableView fx:id="table" editable="true" BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS">
+                            
+                            <columns>
+                                <TableColumn fx:id="idCol" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" style="-fx-alignment: CENTER;" text="Student ID">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="id" />                                        
+                                    </cellValueFactory>
+                                </TableColumn>
+                                <TableColumn fx:id="nameCol" maxWidth="200.0" minWidth="180.0" prefWidth="180.0" style="-fx-alignment: CENTER;" text="Name">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="name" />
+                                    </cellValueFactory>    
+                                </TableColumn> 
+                                <TableColumn fx:id="quizCol" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" style="-fx-alignment: CENTER;" text="Quiz">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="quiz" />
+                                    </cellValueFactory>                                                                         
+                                </TableColumn>                                   
+                                <TableColumn fx:id="a1Col" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" style="-fx-alignment: CENTER;" text="A1">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="a1" />
+                                    </cellValueFactory>                                                                       
+                                </TableColumn>
+                                <TableColumn fx:id="a2Col" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" style="-fx-alignment: CENTER;" text="A2">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="a2" />
+                                    </cellValueFactory>                                                                        
+                                </TableColumn>
+                                <TableColumn fx:id="examCol" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" style="-fx-alignment: CENTER;" text="Exam">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="exam" />
+                                    </cellValueFactory>                                                                         
+                                </TableColumn>
+                                <TableColumn fx:id="cumulativeMarkCol" maxWidth="100.0" minWidth="120.0" prefWidth="120.0" style="-fx-alignment: CENTER;" text="Cumulative Mark">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="cumulativeMark" />
+                                    </cellValueFactory>                                                                       
+                                </TableColumn>
+                                <TableColumn fx:id="gradeCol" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" style="-fx-alignment: CENTER;" text="Grade">
+                                    <cellValueFactory>
+                                        <PropertyValueFactory property="grade" />
+                                    </cellValueFactory>                                                                       
+                                </TableColumn>
+                            </columns>
+                            <items>
+                                <FXCollections fx:factory="observableArrayList" />
+                            </items>
+                        </TableView>
+                    </children>
+                </VBox>
+            </center>
+            <top>
+                <HBox spacing="5.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <MenuBar>
+                            <menus>
+                                <Menu mnemonicParsing="false" text="Enrolment">
+                                    <items>
+                                        <MenuItem fx:id="addEnrolMenuItem" mnemonicParsing="false" onAction="#addNewStudent" text="Add" />
+                              <MenuItem fx:id="editEnrolMenu" mnemonicParsing="false" onAction="#editStudent" text="Update" />
+                              <MenuItem fx:id="deleteEnrolMenu" mnemonicParsing="false" onAction="#deleteStudent" text="Delete" />
+                              <MenuItem fx:id="findEnrolMenu" mnemonicParsing="false" onAction="#FindStudent" text="Find" />
+                                    </items>
+                                </Menu>
+                            </menus>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                        </MenuBar>
+                  <Label fx:id="subjectFocusFld" contentDisplay="RIGHT" prefHeight="52.0" prefWidth="503.0" textFill="#0b00d3">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <Region prefHeight="48.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="aboutBtn" mnemonicParsing="false" onAction="#about" text="About">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                    </children>
+                </HBox>
+            </top>
+         <right>
+            <Region />
+         </right>
+         <bottom>
+            <GridPane>
+              <columnConstraints>
+                  <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="exitBtn" mnemonicParsing="false" onAction="#onExit" prefHeight="42.0" prefWidth="134.0" text="Exit" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Label alignment="CENTER" prefWidth="200.0" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="alert" prefHeight="32.0" prefWidth="1044.0" text="" GridPane.rowIndex="1" GridPane.rowSpan="2147483647">
+                     <GridPane.margin>
+                        <Insets top="10.0" />
+                     </GridPane.margin></Label>
+               </children>
+            </GridPane>
+         </bottom>
+         <left>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                    <HBox alignment="BOTTOM_CENTER" nodeOrientation="LEFT_TO_RIGHT" spacing="10.0" />
+               </children>
+            </VBox>
+         </left>
+        </BorderPane>
+    </children>
+</VBox>
